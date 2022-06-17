@@ -39,9 +39,12 @@ fun BirthdayGreetingWithText(message: String, from: String) {
     }
 }
 
-@Preview(showBackground = true)
+@Preview(
+    showBackground = true,
+    showSystemUi = true
+)
 @Composable
-fun DefaultPreview() {
+fun BirthdayCardPreview() {
     HappyBirthdayTheme {
         BirthdayGreetingWithText(message = "Happy Birthday Gui!", from = "-from Ca")
     }
