@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -80,6 +81,9 @@ fun BirthdayGreetingWithText(message: String, from: String) {
 @Composable
 fun BirthdayGreetingWithImagePreview() {
     HappyBirthdayTheme {
-        BirthdayGreetingWithImage(message = "Happy Birthday Gui!", from = " -from Ca")
+        BirthdayGreetingWithImage(
+            message = stringResource(R.string.happy_birthday_text),
+            from = stringResource(R.string.from_people)
+        )
     }
 }
