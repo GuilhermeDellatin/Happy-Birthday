@@ -14,6 +14,11 @@
         android:theme="@style/Theme.HappyBirthday"
         tools:targetApi="31">
         <activity
+            android:name=".ComposeQuadrantActivity"
+            android:exported="false"
+            android:label="@string/title_activity_compose_quadrant"
+            android:theme="@style/Theme.HappyBirthday" />
+        <activity
             android:name=".TaskManagerActivity"
             android:exported="false"
             android:label="@string/title_activity_task_manager"
