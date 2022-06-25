@@ -14,7 +14,7 @@
     <string name="task_situation">All tasks completed</string>
     <string name="task_congratulations">Nice work!</string>
     <string name="title_activity_compose_quadrant">ComposeQuadrantActivity</string>
-    
+
     <!-- Quadrants Compose -->
     <string name="quadrant_first_title">Text composable</string>
     <string name="quadrant_first_text">Displays text and follows Material Design guidelines.</string>
@@ -24,5 +24,8 @@
     <string name="quadrant_third_text">A layout composable that places its children in a horizontal sequence.</string>
     <string name="quadrant_fourth_title">Column composable</string>
     <string name="quadrant_fourth_text">A layout composable that places its children in a vertical sequence.</string>
+
+    <!-- Low Fidelity Prototype Business Card -->
+    <string name="title_activity_low_fidelity_prototype">LowFidelityPrototypeActivity</string>
 
 </resources>
