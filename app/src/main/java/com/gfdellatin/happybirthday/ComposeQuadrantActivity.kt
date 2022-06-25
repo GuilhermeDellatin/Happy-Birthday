@@ -78,7 +78,7 @@ fun ComposableFunctionCard(
     modifier: Modifier = Modifier
 ) {
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .background(backgroundColor)
             .padding(16.dp),
