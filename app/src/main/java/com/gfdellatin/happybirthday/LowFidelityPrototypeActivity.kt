@@ -62,7 +62,10 @@ fun ComposableBusinessCard() {
                 .padding(4.dp)
         )
         Spaces(32.dp)
-        ComposableContactDetails()
+        ComposableContactDetails(
+            text = stringResource(id = R.string.text_personal_contact),
+            textColor = colorResource(id = R.color.white)
+        )
     }
 }
 
@@ -179,8 +182,20 @@ fun ComposableTechnologies(
 }
 
 @Composable
-fun ComposableContactDetails() {
+fun ComposableContactDetails(
+    text: String,
+    textColor: Color,
+) {
     Column {
+        Text(
+            text = text,
+            color = textColor,
+            textAlign = TextAlign.Justify,
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier
+                .align(Alignment.CenterHorizontally)
+        )
         Divider(
             color = colorResource(id = R.color.white),
             modifier = Modifier
