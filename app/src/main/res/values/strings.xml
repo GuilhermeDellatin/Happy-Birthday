@@ -27,5 +27,8 @@
 
     <!-- Low Fidelity Prototype Business Card -->
     <string name="title_activity_low_fidelity_prototype">LowFidelityPrototypeActivity</string>
+    <string name="full_name">Guilherme Fernandes Dellatin</string>
+    <string name="title_business_card">Software Engineer</string>
+    <string name="title_technologies">Technologies</string>
 
 </resources>
