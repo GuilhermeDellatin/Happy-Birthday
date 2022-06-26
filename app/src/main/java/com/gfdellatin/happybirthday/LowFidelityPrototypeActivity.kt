@@ -3,13 +3,12 @@ package com.gfdellatin.happybirthday
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -22,6 +21,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.gfdellatin.happybirthday.ui.theme.HappyBirthdayTheme
@@ -31,13 +31,7 @@ class LowFidelityPrototypeActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             HappyBirthdayTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    ComposableBusinessCard()
-                }
+                ComposableBusinessCard()
             }
         }
     }
@@ -60,14 +54,15 @@ fun ComposableBusinessCard() {
             modifier = Modifier
                 .padding(4.dp)
         )
-        Spaces()
+        Spaces(32.dp)
         ComposableTechnologies(
             technologies = stringResource(id = R.string.title_technologies),
             textColor = colorResource(id = R.color.white),
             modifier = Modifier
                 .padding(4.dp)
         )
-        Spaces()
+        Spaces(32.dp)
+        ComposableContactDetails()
     }
 }
 
@@ -82,6 +77,7 @@ fun ComposablePersonInformation(
     Column(
         modifier = modifier
             .fillMaxWidth()
+            .padding(top = 16.dp)
     ) {
         Row {
             Image(
@@ -184,12 +180,76 @@ fun ComposableTechnologies(
 
 @Composable
 fun ComposableContactDetails() {
+    Column {
+        Divider(
+            color = colorResource(id = R.color.white),
+            modifier = Modifier
+                .padding(16.dp)
+        )
+        ComposableDetail(
+            icon = R.drawable.ic_baseline_phone,
+            info = stringResource(id = R.string.info_personal_phone),
+            textColor = colorResource(id = R.color.white)
+        )
+        Divider(
+            color = colorResource(id = R.color.white),
+            modifier = Modifier
+                .padding(16.dp)
+        )
+        ComposableDetail(
+            icon = R.drawable.ic_baseline_share,
+            info = stringResource(id = R.string.info_personal_share),
+            textColor = colorResource(id = R.color.white)
+        )
+        Divider(
+            color = colorResource(id = R.color.white),
+            modifier = Modifier
+                .padding(16.dp)
+        )
+        ComposableDetail(
+            icon = R.drawable.ic_baseline_email,
+            info = stringResource(id = R.string.info_personal_mail),
+            textColor = colorResource(id = R.color.white)
+        )
+    }
 
 }
 
 @Composable
-fun Spaces() {
-    Spacer(modifier = Modifier.padding(16.dp))
+fun ComposableDetail(
+    @DrawableRes
+    icon: Int,
+    info: String,
+    textColor: Color
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 16.dp, end = 16.dp),
+        horizontalArrangement = Arrangement.Start
+    ) {
+        Icon(
+            painter = painterResource(id = icon),
+            contentDescription = null,
+            tint = textColor
+        )
+        Text(
+            text = info,
+            color = textColor,
+            textAlign = TextAlign.Justify,
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier
+                .padding(start = 16.dp)
+        )
+    }
+}
+
+@Composable
+fun Spaces(
+    pixels: Dp
+) {
+    Spacer(modifier = Modifier.padding(pixels))
 }
 
 @Preview(
@@ -226,8 +286,18 @@ fun ComposableTechnologiesPreview() {
     )
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun SpacesPreview() {
-    Spaces()
+    Spaces(16.dp)
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ComposableDetailPreview() {
+    ComposableDetail(
+        icon = R.drawable.ic_baseline_phone,
+        "+55 (11) 11111-1111",
+        textColor = colorResource(id = R.color.black)
+    )
 }

@@ -30,5 +30,8 @@
     <string name="full_name">Guilherme Fernandes Dellatin</string>
     <string name="title_business_card">Software Engineer</string>
     <string name="title_technologies">Technologies</string>
+    <string name="info_personal_phone"> +55 (11) 11111–1111</string>
+    <string name="info_personal_share">github.com/GuilhermeDellatin</string>
+    <string name="info_personal_mail">gui.dellatin@android.com</string>
 
 </resources>
