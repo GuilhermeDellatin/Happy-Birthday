@@ -39,4 +39,7 @@
     <!-- Dice Roll App -->
     <string name="roll">Roll</string>
 
+    <!-- Digital Lemonade App -->
+    <string name="title_activity_digital_lemonade">DigitalLemonadeActivity</string>
+
 </resources>
