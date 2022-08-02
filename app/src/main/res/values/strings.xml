@@ -49,5 +49,11 @@
     <string name="lemon_content_description">Lemon</string>
     <string name="glass_of_lemonade_content_description">Glass of lemonade</string>
     <string name="empty_glass_content_description">Empty glass</string>
+    <string name="title_activity_calculate_tip">CalculateTipActivity</string>
+
+    <!-- Calculate Tip -->
+    <string name="bill_amount">Bill amount</string>
+    <string name="calculate_tip">Calculate Tip</string>
+    <string name="tip_amount">Tip amount: %s</string>
 
 </resources>
